@@ -28,9 +28,10 @@ $(document).ready(function () {
       type: "GET",
       url: "https://pub.orcid.org/v2.0/" + ORCIDiD,
       dataType: "text",
-      success: function (xml) {
-        $("#output").text(xml);
-        //  console.log(xml); //ouput in console for checking.
+      //Authorization type: Bearer,
+      //Access token: [Stored access token]
+      success: function (data) {
+        $("#output").text(data);
       },
       // If search fails, show an error message
       error: function(jqXHR, textStatus, errorThrown) {
